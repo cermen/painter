@@ -6,3 +6,34 @@ body {
     border: 2px solid black;
     border-radius: 8px;
 }
+
+.palette {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.palette {
+    margin-top: 12px;
+}
+
+.palette__colors {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(2, 50px);
+    grid-gap: 10px;
+}
+
+.palette__color {
+	border: 2px solid lightgray;
+    border-radius: 50%;
+}
+
+.palette__color-selection {
+    grid-column: -3 / -1;
+}
+
+#selected-color {
+    width: 80px;
+    height: 50px;
+}
