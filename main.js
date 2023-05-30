@@ -1,4 +1,6 @@
 const canvas = document.getElementById("canvas");
+const paletteColors = document.querySelector(".palette__colors");
+const currentColor = document.getElementById("current-color");
 
 const ctx = canvas.getContext("2d");
 let activated = false;
@@ -18,20 +20,22 @@ let activated = false;
 
 canvas.addEventListener("mousedown", (event) => {
     activated = true;
-    console.log("mousedown triggered");
     ctx.beginPath();
     ctx.moveTo(event.offsetX, event.offsetY);
 })
 
 canvas.addEventListener("mousemove", (event) => {
     if (activated) {
-        console.log("mousemove triggered");
+        console.log(event.offsetX, event.offsetY);
         ctx.lineTo(event.offsetX, event.offsetY);
         ctx.stroke();
     }
-})
+});
 
 canvas.addEventListener("click", () => {
     activated = false;
-    console.log("click triggered");
-})
+});
+
+canvas.addEventListener("mouseleave", () => {
+    activated = false;
+});

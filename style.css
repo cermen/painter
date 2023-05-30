@@ -27,13 +27,14 @@ body {
 .palette__color {
 	border: 2px solid lightgray;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .palette__color-selection {
     grid-column: -3 / -1;
 }
 
-#selected-color {
+#current-color {
     width: 80px;
     height: 50px;
 }
