@@ -1,6 +1,7 @@
 const canvas = document.getElementById("canvas");
 const paletteColors = document.querySelector(".palette__colors");
 const currentColor = document.getElementById("current-color");
+const lineWidth = document.getElementById("line-width");
 
 const ctx = canvas.getContext("2d");
 let activated = false;
@@ -21,6 +22,7 @@ canvas.addEventListener("mousedown", (event) => {
     activated = true;
     // setColor();
     ctx.beginPath();
+    ctx.lineCap = "round";
     ctx.moveTo(event.offsetX, event.offsetY);
 })
 
@@ -51,6 +53,10 @@ paletteColors.addEventListener("click", (event) => {
 
 currentColor.addEventListener("input", setColor);
 currentColor.addEventListener("change", setColor);
+
+lineWidth.addEventListener("change", () => {
+    ctx.lineWidth = lineWidth.value;
+})
 
 function setColor() {
     const {r, g, b} = hexToRgb(currentColor.value);
