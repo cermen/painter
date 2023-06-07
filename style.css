@@ -71,3 +71,7 @@ body {
 .tools > button:hover {
     background-color: #0e65f1;
 }
+
+.tools > button:active {
+    background-color: #0d5bd9;
+}
