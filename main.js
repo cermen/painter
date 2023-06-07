@@ -3,6 +3,13 @@ const paletteColors = document.querySelector(".palette__colors");
 const currentColor = document.getElementById("current-color");
 const lineWidth = document.getElementById("line-width");
 
+const allClear = document.querySelector(".tools__all-clear");
+const upload = document.querySelector(".tools__upload");
+const download = document.querySelector(".tools__download");
+
+const CANVAS_WIDTH = 800;
+const CANVAS_HEIGHT = 600;
+
 const ctx = canvas.getContext("2d");
 let activated = false;
 
@@ -56,6 +63,10 @@ currentColor.addEventListener("change", setColor);
 
 lineWidth.addEventListener("change", () => {
     ctx.lineWidth = lineWidth.value;
+})
+
+allClear.addEventListener("click", () => {
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 })
 
 function setColor() {
