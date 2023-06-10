@@ -56,7 +56,7 @@ body {
     margin: 0 auto;
 }
 
-.tools > button {
+.tools button {
     width: 120px;
     height: 40px;
     cursor: pointer;
@@ -68,10 +68,18 @@ body {
     font-size: 13pt;
 }
 
-.tools > button:hover {
+.tools button label {
+    cursor: pointer;
+}
+
+.tools button:hover {
     background-color: #0e65f1;
 }
 
-.tools > button:active {
+.tools button:active {
     background-color: #0d5bd9;
+}
+
+.tools input {
+    display: none;
 }

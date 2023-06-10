@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Painter</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script defer src="main.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <canvas width="800" height="600" id="canvas"></canvas>
     <div class="palette">
-        <div class="palette__colors">
-            <div class="palette__color" style="background-color: #ff3838;"></div>
-            <div class="palette__color" style="background-color: #ff9f1a;"></div>
-            <div class="palette__color" style="background-color: #fff200;"></div>
-            <div class="palette__color" style="background-color: #A3CB38;"></div>
-            <div class="palette__color" style="background-color: #20bf6b;"></div>
-            <div class="palette__color" style="background-color: #48dbfb;"></div>
-            <div class="palette__color" style="background-color: #3867d6;"></div>
-            <div class="palette__color" style="background-color: #8854d0;"></div>
-            <div class="palette__color" style="background-color: #ff9ff3;"></div>
-            <div class="palette__color" style="background-color: #804000;"></div>
-            <div class="palette__color" style="background-color: #ffffff;"></div>
-            <div class="palette__color" style="background-color: #cccccc;"></div>
-            <div class="palette__color" style="background-color: #777777;"></div>
-            <div class="palette__color" style="background-color: #000000;"></div>
-            <div class="palette__color-selection">
-                <input type="color" name="color" id="current-color" value="#000000">
-            </div>
+      <div class="palette__colors">
+        <div class="palette__color" style="background-color: #ff3838"></div>
+        <div class="palette__color" style="background-color: #ff9f1a"></div>
+        <div class="palette__color" style="background-color: #fff200"></div>
+        <div class="palette__color" style="background-color: #a3cb38"></div>
+        <div class="palette__color" style="background-color: #20bf6b"></div>
+        <div class="palette__color" style="background-color: #48dbfb"></div>
+        <div class="palette__color" style="background-color: #3867d6"></div>
+        <div class="palette__color" style="background-color: #8854d0"></div>
+        <div class="palette__color" style="background-color: #ff9ff3"></div>
+        <div class="palette__color" style="background-color: #804000"></div>
+        <div class="palette__color" style="background-color: #ffffff"></div>
+        <div class="palette__color" style="background-color: #cccccc"></div>
+        <div class="palette__color" style="background-color: #777777"></div>
+        <div class="palette__color" style="background-color: #000000"></div>
+        <div class="palette__color-selection">
+          <input type="color" name="color" id="current-color" value="#000000" />
         </div>
-        <div class="palette__width">
-            <input type="range" id="line-width" min="1" max="11" value="1" step="1" />
-        </div>
-        <div class="palette__shapes">
-
-        </div>
+      </div>
+      <div class="palette__width">
+        <input
+          type="range"
+          id="line-width"
+          min="1"
+          max="11"
+          value="1"
+          step="1"
+        />
+      </div>
+      <div class="palette__shapes"></div>
     </div>
     <div class="tools">
-        <button class="tools__all-clear">모두 지우기</button>
-        <button class="tools__upload">파일 업로드</button>
-        <button class="tools__download">다운로드</button>
+      <button class="tools__all-clear">모두 지우기</button>
+      <button class="tools__upload">
+        <label for="tools__upload"
+          >파일 업로드<input
+            type="file"
+            id="tools__upload"
+            name="tools__upload"
+            accept=".jpg, .jpeg, .png, .gif"
+            multiple
+        /></label>
+      </button>
+      <button class="tools__download">다운로드</button>
     </div>
-</body>
+  </body>
 </html>

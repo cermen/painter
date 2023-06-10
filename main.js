@@ -69,6 +69,24 @@ allClear.addEventListener("click", () => {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 })
 
+const uploadInput = document.querySelector(".tools__upload input");
+uploadInput.addEventListener("change", () => {
+    const file = uploadInput.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+        const img = new Image();
+
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0);
+        };
+
+        img.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
+}, false);
+
 function setColor() {
     const {r, g, b} = hexToRgb(currentColor.value);
     ctx.strokeStyle = `rgb(${r}, ${g}, ${b})`;
