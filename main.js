@@ -87,6 +87,18 @@ uploadInput.addEventListener("change", () => {
     reader.readAsDataURL(file);
 }, false);
 
+download.addEventListener("click", () => {
+    html2canvas(canvas, { backgroundColor: "white" }).then(function(canvas) {
+        const dataURL = canvas.toDataURL('image/jpeg');
+        const a = document.createElement('a');
+        a.href = dataURL;
+        a.download = 'canvas_image.jpg';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    });
+});
+
 function setColor() {
     const {r, g, b} = hexToRgb(currentColor.value);
     ctx.strokeStyle = `rgb(${r}, ${g}, ${b})`;
